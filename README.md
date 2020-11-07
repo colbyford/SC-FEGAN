@@ -99,3 +99,10 @@ The software is for educational and academic research purpose only.
 
 ## Acknowledgement
 We acknowledge the official code [DeepFillv1](https://github.com/JiahuiYu/generative_inpainting). We thank all the researchers at ETRI, especially Kimin Yun and Jinwoo Jung, for insightful discussions.
+
+## Running in Docker
+```
+docker build -t sc-fegan .
+
+docker run -it --name sc-fegan -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -u qtuser sc-fegan python3 /tmp/demo.py
+```
