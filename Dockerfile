@@ -6,6 +6,7 @@ MAINTAINER Colby Ford
 
 # Add user
 RUN adduser --quiet --disabled-password qtuser
+ENV QT_DEBUG_PLUGINS=1
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Install Python 3, PyQt5
@@ -13,7 +14,11 @@ RUN apt-get update && \
     apt-get install -y \
     apt-utils \
     python3-pyqt5 \
-    python3-pip
+    python3-pip \
+    libxcb-icccm4
+    # \    libxcb-xinerama0
+
+RUN ln -sf /usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/ /usr/bin/
 
 COPY ./ /tmp/
 

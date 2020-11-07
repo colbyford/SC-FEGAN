@@ -226,6 +226,7 @@ class Ex(QWidget, Ui_Form):
             self.scene.addPixmap(self.image)
 
 if __name__ == '__main__':
+    # config = Config('/tmp/demo.yaml')
     config = Config('demo.yaml')
     os.environ["CUDA_VISIBLE_DEVICES"] = str(config.GPU_NUM)
     model = Model(config)
