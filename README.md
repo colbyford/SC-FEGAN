@@ -28,7 +28,8 @@ Run these commands to start the program.
   mv /${HOME}/SC-FEGAN.ckpt.* /${HOME}/ckpt/
   python3 demo.py
   ```
-  
+You must install TensorFlow v1.13.0rc2.
+
 Select the number of GPUs you want to use by editing `demo.yaml` file (multi-GPUs are not supported).
   ```
   GPU_NUM: 1 (the number you want to use)
